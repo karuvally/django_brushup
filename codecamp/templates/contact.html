@@ -4,4 +4,10 @@
     <p>
         പുതിയ കെർണൽ ({{ kernel }}) ഒക്കെ ആണല്ലോ... മിടുക്കൻ!
     </p>
+    നിനക്കായ് കുറച്ചു നമ്പറുകൾ...
+    <ul>
+        {% for number in my_list %}
+            <li>{{ number }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
