@@ -1,3 +1,4 @@
+import platform
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -8,4 +9,8 @@ def home_view(request, *args, **kwargs):
 
 def contact_view(request, *args, **kwargs):
     # return HttpResponse("<h1>All contacts can be found here</h1>")
-    return render(request, "contact.html", {})
+    context_dict = {
+        "os": platform.system(),
+        "kernel": platform.release()
+    }
+    return render(request, "contact.html", context_dict)
