@@ -7,7 +7,11 @@
     നിനക്കായ് കുറച്ചു നമ്പറുകൾ...
     <ul>
         {% for number in my_list %}
-            <li>{{ number }}</li>
+            {% if number == 2.1 %}
+                <li>{{ number | add:12 }}</li>
+            {% else %}
+                <li>{{ number }}</li>
+            {% endif %}
         {% endfor %}
     </ul>
     {% if processor == "x86_64" %}
