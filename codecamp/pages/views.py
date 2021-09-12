@@ -1,4 +1,5 @@
 import platform
+import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -16,6 +17,7 @@ def contact_view(request, *args, **kwargs):
         "os": platform.system(),
         "kernel": platform.release(),
         "my_list": [1.2, 2.1, 2.2, 3.7],
-        "processor": platform.processor()
+        "processor": platform.processor(),
+        "sample_string": "this is a sample line of text",
     }
     return render(request, "contact.html", context_dict)

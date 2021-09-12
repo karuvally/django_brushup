@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h3>നീ {{ request.user }} അല്ലേടാ?</h3>
+    {{ sample_string | slugify }}
     <p>
         പുതിയ കെർണൽ ({{ kernel }}) ഒക്കെ ആണല്ലോ... മിടുക്കൻ!
     </p>
@@ -8,6 +9,7 @@
     <ul>
         {% for number in my_list %}
             {% if number == 2.1 %}
+            <!-- FOllowig is a filter which adds 12 to 1.2 -->
                 <li>{{ number | add:12 }}</li>
             {% else %}
                 <li>{{ number }}</li>
