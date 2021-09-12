@@ -16,5 +16,6 @@ def contact_view(request, *args, **kwargs):
         "os": platform.system(),
         "kernel": platform.release(),
         "my_list": [1.2, 2.1, 2.2, 3.7],
+        "processor": platform.processor()
     }
     return render(request, "contact.html", context_dict)

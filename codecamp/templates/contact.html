@@ -10,4 +10,7 @@
             <li>{{ number }}</li>
         {% endfor %}
     </ul>
+    {% if processor == "x86_64" %}
+        64 ബിറ്റ് പ്രോസസ്സർ ഒക്കെ ഉണ്ടല്ലോ!
+    {% endif %}
 {% endblock %}
