@@ -1,8 +1,4 @@
-<html>
-    <head>
-        <title>Welcome home!</title>
-    </head>
-    <body>
-        <h3>നീ {{ request.user }} അല്ലേടാ?</h3>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <h3>നീ {{ request.user }} അല്ലേടാ?</h3>
+{% endblock %}
