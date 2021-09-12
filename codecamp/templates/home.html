@@ -1,4 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
     <h3>സുഹൃത്തേ, ഇതാണ് നിന്റെ പുതിയ വീട്...</h3>
+
+    അത്യാവശ്യം അറിഞ്ഞിരിക്കേണ്ട കാര്യങ്ങൾ
+    <ul>
+        {% for karyam in karyam_list %}
+            <li>{{ forloop.counter }} - {{ karyam }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

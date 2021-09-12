@@ -5,7 +5,10 @@ from django.http import HttpResponse
 # Create your views here.
 def home_view(request, *args, **kwargs):
     # return HttpResponse("<h1>Welcome to Home Page!<h1>")
-    return render(request, "home.html", {})
+    context_dict = {
+        "karyam_list": ["പാചകം", "വാചകം", "ഓട്ടം", "ചാട്ടം"]
+    }
+    return render(request, "home.html", context_dict)
 
 def contact_view(request, *args, **kwargs):
     # return HttpResponse("<h1>All contacts can be found here</h1>")
