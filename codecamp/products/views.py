@@ -9,10 +9,7 @@ def product_list_view(request):
     return render(request, "product/list.html", context)
 
 def product_detail_view(request):
-    product_obj = Product.objects.get(id=1)
     context = {
-        "title": product_obj.title,
-        "description": product_obj.description,
-        "featured": product_obj.featured,
+        "product_obj": Product.objects.get(id=1)
     }
     return render(request, "product/detail.html", context)

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ title }}</h1>
+<h1>{{ product_obj.title }}</h1>
 <p>
-    {{ description }} <br>
+    {{ product_obj.description }} <br>
 </p>
 <p>
     {% if featured %}
