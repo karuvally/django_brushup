@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Product
 
-def product_detail_view(request):
+def product_list_view(request):
     products = Product.objects.all()
     context = {"products": []}
     for product in products:
@@ -12,4 +12,4 @@ def product_detail_view(request):
             "summary": product.summary,
             "featured": product.featured,
         })
-    return render(request, "product/detail.html", context)
+    return render(request, "product/list.html", context)
