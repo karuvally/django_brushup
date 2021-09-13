@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<p>
+    {{ description }} <br>
+</p>
+<p>
+    {% if featured %}
+        <i>Featured product</i>
+    {% else %}
+        <i>Not featured, but still good enough</i>
+    {% endif %}
+</p>
+{% endblock %}
