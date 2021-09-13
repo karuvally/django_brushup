@@ -3,12 +3,9 @@ from .models import Product
 
 def product_list_view(request):
     products_obj = Product.objects.all()
-    context = {"products": []}
-    for product_obj in products_obj:
-        context["products"].append({
-            "title": product_obj.title,
-            "price": product_obj.price,
-        })
+    context = {
+        "products": [obj for obj in products_obj]
+    }
     return render(request, "product/list.html", context)
 
 def product_detail_view(request):
