@@ -1,5 +1,16 @@
 from django.shortcuts import render
 from .models import Product
+from .forms import ProductModelForm
+
+def product_model_form_view(request):
+    form = ProductModelForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    
+    context = {
+        "form": form
+    }
+    return render(request, "product/model_form.html", context)
 
 def product_list_view(request):
     products_obj = Product.objects.all()
