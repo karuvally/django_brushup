@@ -6,6 +6,7 @@ def product_model_form_view(request):
     form = ProductModelForm(request.POST or None)
     if form.is_valid():
         form.save()
+        form = ProductModelForm()
     
     context = {
         "form": form
