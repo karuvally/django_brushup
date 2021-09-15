@@ -15,6 +15,7 @@ def product_model_form_view(request):
 
 def product_raw_form_view(request):
     raw_form = ProductRawForm()
+    print("Hello")
     context = {
         "raw_form": raw_form,
     }
