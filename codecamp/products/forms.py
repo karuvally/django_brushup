@@ -13,5 +13,6 @@ class ProductModelForm(forms.ModelForm):
         ]
 
 class ProductRawForm(forms.Form):
+    # Here, we do not have a TextField, so we stick with CharField
     title   = forms.CharField()
     price   = forms.DecimalField()

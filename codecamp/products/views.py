@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Product
-from .forms import ProductModelForm
+from .forms import ProductModelForm, ProductRawForm
 
 def product_model_form_view(request):
     form = ProductModelForm(request.POST or None)
@@ -9,9 +9,16 @@ def product_model_form_view(request):
         form = ProductModelForm()
     
     context = {
-        "form": form
+        "form": form,
     }
     return render(request, "product/model_form.html", context)
+
+def product_raw_form_view(request):
+    raw_form = ProductRawForm()
+    context = {
+        "raw_form": raw_form,
+    }
+    return render(request, "product/raw_form.html", context)
 
 def product_html_form_view(request):
     if request.method == "POST":
