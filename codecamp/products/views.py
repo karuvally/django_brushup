@@ -14,8 +14,12 @@ def product_model_form_view(request):
     return render(request, "product/model_form.html", context)
 
 def product_html_form_view(request):
-    context = {}
-    return render(request, "product/html_form.html", context)
+    if request.method == "POST":
+        Product.objects.create(
+            title=request.POST.get("title"),
+            price=request.POST.get("price"),
+        )
+    return render(request, "product/html_form.html", {})
 
 def product_list_view(request):
     products_obj = Product.objects.all()
