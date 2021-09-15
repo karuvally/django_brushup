@@ -13,7 +13,7 @@ def product_model_form_view(request):
     }
     return render(request, "product/model_form.html", context)
 
-def html_form_view(request):
+def product_html_form_view(request):
     context = {}
     return render(request, "product/html_form.html", context)
 
