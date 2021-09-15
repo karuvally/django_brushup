@@ -13,6 +13,10 @@ def product_model_form_view(request):
     }
     return render(request, "product/model_form.html", context)
 
+def html_form_view(request):
+    context = {}
+    return render(request, "product/html_form.html", context)
+
 def product_list_view(request):
     products_obj = Product.objects.all()
     context = {
