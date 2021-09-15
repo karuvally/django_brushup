@@ -1,4 +1,3 @@
-from products.views import product_list_view
 from django import forms
 from .models import Product
 
