@@ -15,6 +15,8 @@ def product_model_form_view(request):
 
 def product_raw_form_view(request):
     raw_form = ProductRawForm()
+    if request.method == "POST":
+        raw_form = ProductRawForm(request.POST)
     print("Hello")
     context = {
         "raw_form": raw_form,
