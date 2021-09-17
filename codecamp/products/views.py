@@ -19,6 +19,7 @@ def product_raw_form_view(request):
         raw_form = ProductRawForm(request.POST)
         if raw_form.is_valid():
             print(raw_form.cleaned_data)
+            Product.objects.create(**raw_form.cleaned_data)
         raw_form = ProductRawForm()
     context = {
         "raw_form": raw_form,
