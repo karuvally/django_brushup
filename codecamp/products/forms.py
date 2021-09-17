@@ -18,6 +18,7 @@ class ProductRawForm(forms.Form):
     description = forms.CharField(label="വിശദീകരണം", widget=forms.Textarea)
     summary     = forms.CharField(
         label="അധിക വിവരം",
+        required=False,
         widget=forms.Textarea(
             attrs={
                 "placeholder": "വെറുതെ ഒരു പ്ലേസ്‌ഹോൾഡർ",
