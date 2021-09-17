@@ -12,6 +12,15 @@ class ProductModelForm(forms.ModelForm):
             "description",
         ]
 
+    # def clean_<field_name>(self, *args, **kwargs):
+    #     pass
+    # Ensure pricing is not too high
+    def clean_price(self, *args, **kwargs):
+        price = self.cleaned_data.get("price")
+        if price > 999:
+            raise forms.ValidationError("Price too high!")
+        return price
+
 class ProductRawForm(forms.Form):
     # Here, we do not have a TextField, so we stick with CharField
     # Make sure the var names match that of model,
