@@ -2,17 +2,20 @@ from django import forms
 from .models import Product
 
 class ProductModelForm(forms.ModelForm):
+    # Overriding default implementation of title field
+    title = forms.CharField(label="സാധനത്തിന്റെ പേര്")
     class Meta:
         model = Product
         fields = [
             "title",
             "price",
             "description",
-            
         ]
 
 class ProductRawForm(forms.Form):
     # Here, we do not have a TextField, so we stick with CharField
+    # Make sure the var names match that of model,
+    # This makes it possible to pass data as a dict (**raw_form.cleaned_data)
     title       = forms.CharField(label="സാധനത്തിന്റെ പേര്")
     price       = forms.DecimalField(label="പരമാവധി റീറ്റെയ്ൽ തുക", initial=99.99)
     description = forms.CharField(label="വിശദീകരണം", widget=forms.Textarea)
