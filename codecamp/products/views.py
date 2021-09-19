@@ -13,12 +13,25 @@ def product_model_form_view(request):
     }
     return render(request, "product/model_form.html", context)
 
+def product_model_form_change_view(request):
+    obj = Product.objects.get(id=1)
+    form = ProductModelForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        form = ProductModelForm()
+    
+    context = {
+        "form": form,
+    }
+    return render(request, "product/model_form.html", context)
+
 def product_raw_form_view(request):
     init_data = {
         "title": "A random title",
         "description": "A very useful description",
     }
     raw_form = ProductRawForm(initial=init_data)
+    
     if request.method == "POST":
         raw_form = ProductRawForm(request.POST)
         if raw_form.is_valid():
