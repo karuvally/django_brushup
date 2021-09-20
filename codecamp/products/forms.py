@@ -43,8 +43,4 @@ class ProductRawForm(forms.Form):
     )
 
 class ProductDeleteForm(forms.Form):
-    product_tuple = [
-        (product.id, product.title)
-        for product in Product.objects.all()
-    ]
-    id = forms.ChoiceField(choices=product_tuple, label="സാധനം")
+    id = forms.ChoiceField( label="സാധനം")

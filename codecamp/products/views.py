@@ -69,7 +69,13 @@ def product_detail_view(request, id_lookup):
     return render(request, "product/detail.html", context)
 
 def product_delete_view(request):
+    product_tuple = [
+        (product.id, product.title)
+        for product in Product.objects.all()
+    ]
     delete_form = ProductDeleteForm(request.POST or None)
+    # This allows updating choices every time form is re-loaded
+    delete_form.fields["id"].choices = product_tuple
     if delete_form.is_valid():
         Product.objects.get(**delete_form.cleaned_data).delete()
     context = {"raw_form": delete_form}
