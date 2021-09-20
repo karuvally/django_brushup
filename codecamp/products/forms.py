@@ -47,5 +47,4 @@ class ProductDeleteForm(forms.Form):
         (product.id, product.title)
         for product in Product.objects.all()
     ]
-    title = forms.ChoiceField(choices=product_tuple)
-
+    id = forms.ChoiceField(choices=product_tuple, label="സാധനം")

@@ -20,6 +20,7 @@ from pages.views import home_view, contact_view
 from products.views import product_list_view, product_detail_view
 from products.views import product_model_form_view, product_html_form_view
 from products.views import product_raw_form_view, product_model_form_change_view
+from products.views import product_delete_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -30,5 +31,6 @@ urlpatterns = [
     path('model_change_form/', product_model_form_change_view, name='model_change'),
     path('html_form/', product_html_form_view, name='html_form'),
     path('raw_form/', product_raw_form_view, name='raw_form'),
+    path('delete_form/', product_delete_view, name='delete_form'),
     path('admin/', admin.site.urls),
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
-from .forms import ProductModelForm, ProductRawForm
+from .forms import ProductModelForm, ProductRawForm, ProductDeleteForm
 
 def product_model_form_view(request):
     form = ProductModelForm(request.POST or None)
@@ -67,3 +67,10 @@ def product_detail_view(request, id_lookup):
         "product_obj": get_object_or_404(Product, id=id_lookup),
     }
     return render(request, "product/detail.html", context)
+
+def product_delete_view(request):
+    delete_form = ProductDeleteForm(request.POST or None)
+    if delete_form.is_valid():
+        print(delete_form.cleaned_data)
+    context = {"raw_form": delete_form}
+    return render(request, "product/raw_form.html", context)
