@@ -71,6 +71,6 @@ def product_detail_view(request, id_lookup):
 def product_delete_view(request):
     delete_form = ProductDeleteForm(request.POST or None)
     if delete_form.is_valid():
-        print(delete_form.cleaned_data)
+        Product.objects.get(**delete_form.cleaned_data).delete()
     context = {"raw_form": delete_form}
     return render(request, "product/raw_form.html", context)
