@@ -61,8 +61,8 @@ def product_list_view(request):
     }
     return render(request, "product/list.html", context)
 
-def product_detail_view(request):
+def product_detail_view(request, id_lookup):
     context = {
-        "product_obj": Product.objects.get(id=1)
+        "product_obj": Product.objects.get(id=id_lookup)
     }
     return render(request, "product/detail.html", context)
