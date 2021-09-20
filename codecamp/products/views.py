@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .forms import ProductModelForm, ProductRawForm
 
@@ -63,6 +63,7 @@ def product_list_view(request):
 
 def product_detail_view(request, id_lookup):
     context = {
-        "product_obj": Product.objects.get(id=id_lookup)
+        # "product_obj": Product.objects.get(id=id_lookup)
+        "product_obj": get_object_or_404(Product, id=id_lookup),
     }
     return render(request, "product/detail.html", context)
