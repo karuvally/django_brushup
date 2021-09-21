@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
 from .forms import ProductModelForm, ProductRawForm, ProductDeleteForm
 
@@ -78,5 +78,6 @@ def product_delete_view(request):
     delete_form.fields["id"].choices = product_tuple
     if delete_form.is_valid():
         Product.objects.get(**delete_form.cleaned_data).delete()
+        return redirect("/")
     context = {"raw_form": delete_form}
     return render(request, "product/raw_form.html", context)
