@@ -24,4 +24,5 @@ urlpatterns = [
     path('contact/', contact_view, name='contact'),
     path('admin/', admin.site.urls),
     path("product/", include("products.urls")),
+    path("info/", include("info.urls")),
 ]
