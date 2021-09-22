@@ -1,6 +1,6 @@
 <nav>
-    <a href="/">വീട്</a>
-    <a href="/contact">പേര്</a>
+    <a href="{% url 'home' %}">വീട്</a>
+    <a href="{% url 'contact' %}">പേര്</a>
     <a href="{% url 'products:product_list' %}">പട്ടിക</a>
-    <a href="/admin">നടത്തിപ്പ്‌</a>
+    <a href="admin/">നടത്തിപ്പ്‌</a>
 </nav>
