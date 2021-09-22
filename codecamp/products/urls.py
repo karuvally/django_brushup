@@ -10,6 +10,7 @@ from products.views import (
     product_delete_view,
 )
 
+app_name = "products"
 urlpatterns = [
     path('product_list/', product_list_view, name='product_list'),
     path('product/<int:id_lookup>/', product_detail_view, name='product_detail'),
