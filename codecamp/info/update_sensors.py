@@ -1,7 +1,7 @@
 import subprocess
 import json
 
-def update_sensor_data():
+def get_sensor_data():
     process = subprocess.Popen(
         ["sensors", "-j"],
         stdout=subprocess.PIPE,
