@@ -10,6 +10,6 @@ def info_home_view(request):
     sensors.update_sensor_data()
     return render(request, "info_home.html", {})
 
-def info_list_view(ListView):
+class InfoListView(ListView):
     """Show stored temp values as a list"""
     queryset = Sensor.objects.all()
