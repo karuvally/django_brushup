@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sensors
+from .models import Sensor
 
 # Register your models here.
-admin.site.register(Sensors)
+admin.site.register(Sensor)

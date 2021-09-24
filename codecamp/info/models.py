@@ -3,7 +3,7 @@ import json
 from django.db import models
 
 # Create your models here.
-class Sensors(models.Model):
+class Sensor(models.Model):
     cpu = models.DecimalField(decimal_places=1, max_digits=4)
 
     def _get_sensor_data(self):
@@ -18,4 +18,4 @@ class Sensors(models.Model):
     
     def update_sensor_data(self):
         data = self._get_sensor_data()
-        self.objects.create(cpu=data["coretemp-isa-0000"]["Package id 0"]["temp1_input"])
+        Sensor.objects.create(cpu=data["coretemp-isa-0000"]["Package id 0"]["temp1_input"])
