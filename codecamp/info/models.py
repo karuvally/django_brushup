@@ -18,4 +18,7 @@ class Sensor(models.Model):
     
     def update_sensor_data(self):
         data = self._get_sensor_data()
-        Sensor.objects.create(cpu=data["coretemp-isa-0000"]["Package id 0"]["temp1_input"])
+        Sensor.objects.create(
+            cpu=data["coretemp-isa-0000"]["Package id 0"]["temp1_input"]
+        )
+        return data["coretemp-isa-0000"]["Package id 0"]["temp1_input"]
