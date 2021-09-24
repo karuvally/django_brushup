@@ -18,4 +18,4 @@ class Sensors(models.Model):
     
     def update_sensor_data(self):
         data = self._get_sensor_data()
-        # Add retrieved data to the database
+        self.objects.create(cpu=data["coretemp-isa-0000"]["Package id 0"]["temp1_input"])
