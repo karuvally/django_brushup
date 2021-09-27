@@ -12,5 +12,5 @@ def info_home_view(request):
 
 class InfoListView(ListView):
     """Show stored temp values as a list"""
-    template_name = "info/templates/list_view.html"
+    template_name = "list_view.html"
     queryset = Sensor.objects.all()
