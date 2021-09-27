@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
-{% for instance in object_list %}
-    <p>{{ instance.id }}</p>
-{% endfor %}
+{% block content %}
+    {% for instance in object_list %}
+        <p>{{ instance.cpu }}</p>
+    {% endfor %}
+{% endblock %}
